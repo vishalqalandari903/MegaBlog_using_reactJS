@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
+console.log("Dote");
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 
 import { Header, Footer } from "./components/index";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 
 function App() {
-  console.log("Dote");
   const [loading, setLoading] = useState(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,11 +30,13 @@ function App() {
     <div className=" min-h-screen flex flex-wrap content-center bg-gray-400">
       <div className="w-full block">
         <Header />
-        <main>TODO: {/* <Outlet />  */}</main>
+        <main>TODO: {/* TODO: <Outlet /> */}</main>
         <Footer />
       </div>
     </div>
-  ) : null;
+  ) : (
+    <h1>Hello</h1>
+  );
 }
 
 export default App;
